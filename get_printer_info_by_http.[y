@@ -1,0 +1,15 @@
+import requests
+
+# access in browser : http://192.168.98.226/hp/device/info_deviceStatus.html?tab=Home&menu=DevStatus
+url = "http://192.168.98.226/hp/device/info_deviceStatus.html"
+
+querystring = {"tab":"Home","menu":"DevStatus"}
+
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "7a22de7c-1794-e512-d99d-c4be2502f4b1"
+    }
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
